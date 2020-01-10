@@ -12,7 +12,6 @@ public class ControlTabFragment extends BaseFragment {
     public static ControlTabFragment newInstance() {
         Bundle args = new Bundle();
         ControlTabFragment fragment = new ControlTabFragment();
-        fragment.setArguments(args);
         return fragment;
     }
 

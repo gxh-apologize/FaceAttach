@@ -1,11 +1,14 @@
 package cn.gxh.faceattach.ui.activity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 
+import cn.gxh.faceattach.MainActivity;
 import cn.gxh.faceattach.R;
 import cn.gxh.faceattach.base.Global;
 import cn.gxh.faceattach.util.Logger;
@@ -28,9 +31,10 @@ public class SplashActivity extends BaseActivity {
     }
 
     @Override
-    public void initView() {
+    public void initView(Bundle savedInstanceState) {
 
     }
+
 
     @Override
     public void initListener() {
@@ -44,8 +48,9 @@ public class SplashActivity extends BaseActivity {
             ActivityCompat.requestPermissions(SplashActivity.this, NEEDED_PERMISSIONS, 2);
         } else {
             Logger.d("gxh", "isAllGranted 1");
+            startActivity(new Intent(this,MainActivity.class));
+            finish();
         }
-
     }
 
     private boolean checkPermissions(String[] neededPermissions) {
@@ -70,6 +75,8 @@ public class SplashActivity extends BaseActivity {
             }
             if (isAllGranted) {
                 Logger.d("gxh", "isAllGranted 2");
+                startActivity(new Intent(this,MainActivity.class));
+                finish();
 
             } else {
                 Global.showToast("权限拒绝");

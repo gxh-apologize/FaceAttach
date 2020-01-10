@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FaceAttach</string>
+
+    <string name="bottomBar_control">控制</string>
+    <string name="bottomBar_add">添加</string>
+    <string name="bottomBar_history">记录</string>
 </resources>

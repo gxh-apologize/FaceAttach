@@ -38,4 +38,10 @@ dependencies {
     implementation 'me.yokeyword:eventbus-activity-scope:1.1.0'
     //适配
     implementation 'com.bulong.rudeness:rudeness:latest.release@aar'
+    implementation 'pub.devrel:easypermissions:1.0.1'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.5'
 }

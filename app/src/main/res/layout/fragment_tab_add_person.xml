@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray_1">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/et_fragment_tab_add_person_name"
+        android:layout_width="match_parent"
+        android:layout_height="110pt"
+        android:hint="请输入姓名"
+        android:textColor="@color/black_2"
+        android:textSize="28pt"
+        android:background="@null"
+        android:textColorHint="@color/gray_3"/>
+
+    <Button
+        android:id="@+id/btn_fragment_tab_add_person_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tab_unselect"
+        android:layout_marginTop="20pt"
+        android:textSize="28pt"
+        android:text="选择照片"
+        android:textColor="@color/black_2"/>
+
+    <Button
+        android:id="@+id/btn_fragment_tab_add_person_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tab_unselect"
+        android:layout_marginTop="20pt"
+        android:textSize="28pt"
+        android:text="提交"
+        android:textColor="@color/black_2"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/iv_fragment_tab_add_person_pic"
+            android:layout_width="300pt"
+            android:layout_height="300pt"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
