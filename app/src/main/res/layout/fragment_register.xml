@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <cn.gxh.faceattach.ui.view.TitleBar
+        android:id="@+id/tb_fragment_register"
+        android:layout_width="match_parent"
+        android:layout_height="90pt"
+        app:TitleBarBgColor="@color/main_color"
+        app:TitleBarRightIsShow="false"
+        app:TitleBarMidContent="注册"
+        app:TitleBarBackIsShow="true">
+
+    </cn.gxh.faceattach.ui.view.TitleBar>
+
+    <RelativeLayout
+        android:layout_width="500pt"
+        android:layout_height="90pt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100pt">
+
+        <ImageView
+            android:id="@+id/iv_fragment_register_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:src="@drawable/login_phone" />
+
+        <cn.gxh.faceattach.ui.view.XEditLayout
+            android:id="@+id/xet_fragment_register_phone"
+            android:layout_width="match_parent"
+            android:layout_height="70pt"
+            app:xeditLayoutHitStr="请输入账号"
+            app:xeditLayoutIsSearch="false"
+            android:layout_toRightOf="@id/iv_fragment_register_phone"
+            app:xeditLayoutType="phone"
+            android:layout_marginLeft="20pt"
+            android:layout_centerVertical="true"
+            app:xeditLayoutColor="@color/gray_4"
+            app:xeditLayoutStrSize="20pt"
+            app:xeditLayoutHitColor="@color/gray_9">
+
+        </cn.gxh.faceattach.ui.view.XEditLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:background="@color/gray_1"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="500pt"
+        android:layout_height="100pt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20pt">
+
+        <ImageView
+            android:id="@+id/iv_fragment_register_psw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/login_psw" />
+
+        <cn.gxh.faceattach.ui.view.XEditLayout
+            android:id="@+id/xet_fragment_register_password"
+            android:layout_width="match_parent"
+            android:layout_height="70pt"
+            app:xeditLayoutHitStr="请输入密码"
+            app:xeditLayoutIsSearch="false"
+            android:layout_toRightOf="@id/iv_fragment_register_psw"
+            app:xeditLayoutType="password"
+            android:layout_marginLeft="20pt"
+            android:layout_centerVertical="true"
+            app:xeditLayoutColor="@color/gray_4"
+            app:xeditLayoutStrSize="20pt"
+            app:xeditLayoutHitColor="@color/gray_9">
+
+        </cn.gxh.faceattach.ui.view.XEditLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:background="@color/gray_1"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_fragment_register_save"
+        android:layout_width="500pt"
+        android:layout_height="80pt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="34pt"
+        android:background="@color/main_color"
+        android:text="注  册"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="28pt" />
+
+</LinearLayout>

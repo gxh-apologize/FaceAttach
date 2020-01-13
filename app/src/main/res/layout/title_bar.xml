@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlt_title_bar_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:id="@+id/iv_title_bar_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="24pt"
+        android:paddingLeft="20pt"
+        android:paddingRight="20pt"
+        android:visibility="gone"
+        android:src="@drawable/back" />
+
+    <TextView
+        android:id="@+id/tv_title_bar_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="21pt"
+        android:layout_toRightOf="@id/iv_title_bar_back"
+        android:textColor="@color/blue_1"
+        android:textSize="28pt" />
+
+    <TextView
+        android:id="@+id/tv_title_bar_mid_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:textSize="30pt" />
+
+
+    <TextView
+        android:id="@+id/tv_title_bar_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="24pt"
+        android:textColor="@color/blue_1"
+        android:textSize="28pt" />
+
+
+</RelativeLayout>

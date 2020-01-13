@@ -21,6 +21,7 @@ import butterknife.Bind;
 import cn.gxh.faceattach.R;
 import cn.gxh.faceattach.base.Global;
 import cn.gxh.faceattach.bean.MobileAddSend;
+import cn.gxh.faceattach.bean.MobileLoginSend;
 import cn.gxh.faceattach.http.HttpUrl;
 import cn.gxh.faceattach.http.HttpUtil;
 import cn.gxh.faceattach.interfaces.NetworkRequestListener;
@@ -85,10 +86,10 @@ public class AddPersonTabFragment extends BaseFragment {
     @Override
     public void onSupportVisible() {
         super.onSupportVisible();
-        if(bitmap!=null && !bitmap.isRecycled()){
-            bitmap.recycle();
-            bitmap=null;
-        }
+//        if(bitmap!=null && !bitmap.isRecycled()){
+//            bitmap.recycle();
+//            bitmap=null;
+//        }
     }
 
     private void picturePicker(){
@@ -170,5 +171,7 @@ public class AddPersonTabFragment extends BaseFragment {
                     }
                 });
     }
+
+
 }
 

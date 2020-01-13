@@ -5,15 +5,17 @@ import android.app.Application;
 import com.bulong.rudeness.RudenessScreenHelper;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheMode;
-import com.lzy.okgo.https.HttpsUtils;
 
 import java.util.concurrent.TimeUnit;
 
+import cn.gxh.faceattach.bean.LoginInfo;
+import cn.gxh.faceattach.util.SharePrefUtil;
 import okhttp3.OkHttpClient;
 
 public class MyApp extends Application {
     //设计图标注的宽度
-    public static int designWidth = 1920;
+    public static int designWidth = 720;
+    public static LoginInfo loginInfo;
 
     @Override
     public void onCreate() {
@@ -21,6 +23,9 @@ public class MyApp extends Application {
         //初始化适配类
         new RudenessScreenHelper(this, designWidth).activate();
         Global.init(this);
+        SharePrefUtil.getInstance().initSP(this);
+
+        loginInfo= (LoginInfo) SharePrefUtil.getInstance().getObj("login");
 
         initOkGo();
     }
@@ -33,8 +38,8 @@ public class MyApp extends Application {
         builder.writeTimeout(OkGo.DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS);
         //全局的连接超时时间
         builder.connectTimeout(OkGo.DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS);
-        HttpsUtils.SSLParams sslParams1 = HttpsUtils.getSslSocketFactory();
-        builder.sslSocketFactory(sslParams1.sSLSocketFactory, sslParams1.trustManager);
+//        HttpsUtils.SSLParams sslParams1 = HttpsUtils.getSslSocketFactory();
+//        builder.sslSocketFactory(sslParams1.sSLSocketFactory, sslParams1.trustManager);
         //配置https的域名匹配规则，详细看demo的初始化介绍，不需要就不要加入，使用不当会导致https握手失败
         //builder.hostnameVerifier(new SafeHostnameVerifier());
 

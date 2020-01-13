@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="XEditLayout">
+        <attr name="xeditLayoutHitStr" format="string"></attr>
+        <attr name="xeditLayoutHitColor" format="color"></attr>
+        <attr name="xeditLayoutColor" format="color"></attr>
+        <attr name="xeditLayoutStrSize" format="dimension"></attr>
+        <attr name="xeditLayoutType">
+            <enum name="phone" value="1"></enum>
+            <enum name="password" value="2"></enum>
+            <enum name="all" value="3"></enum>
+        </attr>
+
+        <attr name="xeditLayoutIsSearch" format="boolean"></attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="TitleBar">
+        <attr name="TitleBarContent" format="string"></attr>
+        <attr name="TitleBarRightContent" format="string"></attr>
+        <attr name="TitleBarRightIsShow" format="boolean"></attr>
+        <attr name="TitleBarBackIsShow" format="boolean"></attr>
+        <attr name="TitleBarBgColor" format="color"></attr>
+        <attr name="TitleBarMidContent" format="string"></attr>
+    </declare-styleable>
+</resources>

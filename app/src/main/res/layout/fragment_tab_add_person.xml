@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/gray_1">
+
+    <cn.gxh.faceattach.ui.view.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="90pt"
+        app:TitleBarBgColor="@color/main_color"
+        app:TitleBarRightIsShow="false"
+        app:TitleBarMidContent="添加人员">
+
+    </cn.gxh.faceattach.ui.view.TitleBar>
 
     <EditText
         android:id="@+id/et_fragment_tab_add_person_name"

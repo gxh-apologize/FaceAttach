@@ -11,7 +11,10 @@ import android.support.v4.content.ContextCompat;
 import cn.gxh.faceattach.MainActivity;
 import cn.gxh.faceattach.R;
 import cn.gxh.faceattach.base.Global;
+import cn.gxh.faceattach.base.MyApp;
+import cn.gxh.faceattach.bean.LoginInfo;
 import cn.gxh.faceattach.util.Logger;
+import cn.gxh.faceattach.util.SharePrefUtil;
 
 /**
  * 欢迎页面
@@ -48,8 +51,7 @@ public class SplashActivity extends BaseActivity {
             ActivityCompat.requestPermissions(SplashActivity.this, NEEDED_PERMISSIONS, 2);
         } else {
             Logger.d("gxh", "isAllGranted 1");
-            startActivity(new Intent(this,MainActivity.class));
-            finish();
+            switchPage();
         }
     }
 
@@ -75,9 +77,7 @@ public class SplashActivity extends BaseActivity {
             }
             if (isAllGranted) {
                 Logger.d("gxh", "isAllGranted 2");
-                startActivity(new Intent(this,MainActivity.class));
-                finish();
-
+                switchPage();
             } else {
                 Global.showToast("权限拒绝");
                 finish();
@@ -85,4 +85,13 @@ public class SplashActivity extends BaseActivity {
         }
     }
 
+    private void switchPage(){
+        if(MyApp.loginInfo==null){
+            startActivity(new Intent(this,LoginRootActivity.class));
+            finish();
+        }else {
+            startActivity(new Intent(this,MainActivity.class));
+            finish();
+        }
+    }
 }

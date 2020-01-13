@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/gray_1"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <cn.gxh.faceattach.ui.view.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="90pt"
+        app:TitleBarBgColor="@color/main_color"
+        app:TitleBarRightIsShow="false"
+        app:TitleBarMidContent="设备列表">
+
+    </cn.gxh.faceattach.ui.view.TitleBar>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srlt_fragment_tab_control"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rlv_fragment_tab_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never">
+
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

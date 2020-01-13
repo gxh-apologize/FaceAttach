@@ -69,7 +69,7 @@ public class MainFragment extends BaseFragment {
                 .addItem(new BottomBarTab(_mActivity, R.drawable.ic_home_white_24dp, getString(R.string.bottomBar_add)))
                 .addItem(new BottomBarTab(_mActivity, R.drawable.ic_discover_white_24dp, getString(R.string.bottomBar_history)));
         // 模拟未读消息
-        bottomBar.getItem(0).setUnreadCount(9);
+        //   bottomBar.getItem(0).setUnreadCount(9);
         bottomBar.setOnTabSelectedListener(new BottomBar.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position, int prePosition) {

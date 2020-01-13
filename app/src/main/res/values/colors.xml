@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#18BC9A</color>
+    <color name="colorPrimaryDark">#18BC9A</color>
     <color name="colorAccent">#D81B60</color>
 
     <color name="tab_unselect">#c9c9c9</color>
+
+    <color name="main_color">#18BC9A</color>
 
     <color name="gray_1">#eeeeee</color>
     <color name="gray_2">#a2a2a2</color>
@@ -40,4 +42,6 @@
     <color name="black_9">#676767</color>
     <color name="black_10">#343434</color>
     <color name="black_11">#e5e5e5</color>
+
+    <color name="blue_1">#0983f6</color>
 </resources>

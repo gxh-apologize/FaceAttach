@@ -10,6 +10,7 @@ import java.util.Map;
 import cn.gxh.faceattach.base.Global;
 import cn.gxh.faceattach.base.MyApp;
 import cn.gxh.faceattach.interfaces.NetworkRequestListener;
+import cn.gxh.faceattach.util.Logger;
 
 public class HttpUtil {
 
@@ -74,9 +75,10 @@ public class HttpUtil {
                         //404/>=500/解析失败这三种情况会回调这个OkGo中的onError
                         @Override
                         public void onError(Response<String> response) {
-                            super.onError(response);
-                            networkRequestListener.onError(response.getRawResponse().code(),
-                                    response.body());
+                            //super.onError(response);
+                            Logger.d("gxh",response.code()+"");
+//                            networkRequestListener.onError(response.getRawResponse().code(),
+//                                    response.body());
                         }
                     });
 
