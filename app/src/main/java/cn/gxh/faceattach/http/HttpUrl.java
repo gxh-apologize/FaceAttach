@@ -8,4 +8,6 @@ public class HttpUrl {
     public static final String MOBILE_ADD = BASE_URL+"/api/mobile/RegisterUser";
     public static final String MOBILE_DEVICES= BASE_URL+"/api/mobile/GetMobileUserMobileList";
     public static final String MOBILE_SET_DOOR_STATUS= BASE_URL+"/api/mobile/SetDoorStatus";
+
+    public static final String MOBILE_RECORD=BASE_URL+"/api/mobile/GetMobileUserAccessList";
 }

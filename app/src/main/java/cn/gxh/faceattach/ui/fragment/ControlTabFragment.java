@@ -14,6 +14,7 @@ import butterknife.Bind;
 import cn.gxh.faceattach.R;
 import cn.gxh.faceattach.adapter.DeviceAdapter;
 import cn.gxh.faceattach.base.Global;
+import cn.gxh.faceattach.base.MyApp;
 import cn.gxh.faceattach.bean.BaseBean;
 import cn.gxh.faceattach.bean.MobileDevicesResponse;
 import cn.gxh.faceattach.bean.MobileSetDoorStatusSend;
@@ -84,9 +85,9 @@ public class ControlTabFragment extends BaseFragment {
     }
 
     private void getDevices(){
-        String id="bb808064-fad1-4abe-ba8b-4eb6a05c533b";
+        //String id="bb808064-fad1-4abe-ba8b-4eb6a05c533b";
         String json = "{\n" +
-                "  \"Id\": \"" + id + "\"\n" +
+                "  \"Id\": \"" + MyApp.loginInfo.getId() + "\"\n" +
                 "}";
 
         HttpUtil.upJsonByPost(HttpUrl.MOBILE_DEVICES, this, json,
@@ -124,8 +125,8 @@ public class ControlTabFragment extends BaseFragment {
         mobileSetDoorStatusSend.setMobileId(deviceAdapter.getData().get(position).getMobileId());
         String json = Global.getGson().toJson(mobileSetDoorStatusSend);
         HttpUtil.upJsonByPost(HttpUrl.MOBILE_SET_DOOR_STATUS, this, json,
-                new NetworkRequestListener() {
-                    @Override
+                new  NetworkRequestListener() {
+                     @Override
                     public void onNetWorkError() {
 
                     }

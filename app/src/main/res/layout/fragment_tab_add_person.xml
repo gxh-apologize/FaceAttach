@@ -23,27 +23,46 @@
         android:textColor="@color/black_2"
         android:textSize="28pt"
         android:background="@null"
+        android:textCursorDrawable="@null"
         android:textColorHint="@color/gray_3"/>
 
-    <Button
-        android:id="@+id/btn_fragment_tab_add_person_picker"
+    <EditText
+        android:id="@+id/et_fragment_tab_add_person_phone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/tab_unselect"
-        android:layout_marginTop="20pt"
+        android:layout_height="110pt"
+        android:hint="请输入手机号"
+        android:textColor="@color/black_2"
         android:textSize="28pt"
-        android:text="选择照片"
-        android:textColor="@color/black_2"/>
+        android:background="@null"
+        android:inputType="phone"
+        android:textCursorDrawable="@null"
+        android:textColorHint="@color/gray_3"/>
 
-    <Button
-        android:id="@+id/btn_fragment_tab_add_person_confirm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/tab_unselect"
+
+    <TextView
+        android:id="@+id/tv_fragment_tab_add_person_picker"
+        android:layout_width="500pt"
+        android:layout_height="80pt"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="20pt"
-        android:textSize="28pt"
+        android:background="@color/main_color"
+        android:text="选择照片"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="28pt" />
+
+    <TextView
+        android:id="@+id/tv_fragment_tab_add_person_confirm"
+        android:layout_width="500pt"
+        android:layout_height="80pt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20pt"
+        android:background="@color/main_color"
         android:text="提交"
-        android:textColor="@color/black_2"/>
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="28pt" />
+
 
     <RelativeLayout
         android:layout_width="match_parent"

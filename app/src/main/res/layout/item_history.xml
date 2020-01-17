@@ -7,13 +7,39 @@
         android:layout_width="match_parent"
         android:layout_height="129pt">
 
-
-
         <ImageView
+            android:id="@+id/iv_item_history_pic"
             android:layout_width="110pt"
             android:layout_height="110pt"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20pt"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/iv_item_history_pic">
+
+            <TextView
+                android:id="@+id/tv_item_history_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="28pt"
+                android:textColor="@color/black_2"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/tv_item_history_time"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="28pt"
+                android:textColor="@color/black_2"
+                android:gravity="center_vertical"/>
+        </LinearLayout>
+
 
     </RelativeLayout>
 

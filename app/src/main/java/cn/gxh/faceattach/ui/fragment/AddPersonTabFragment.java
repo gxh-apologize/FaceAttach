@@ -3,25 +3,26 @@ package cn.gxh.faceattach.ui.fragment;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.blankj.utilcode.util.RegexUtils;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
-
 import java.util.List;
-
 import butterknife.Bind;
 import cn.gxh.faceattach.R;
 import cn.gxh.faceattach.base.Global;
+import cn.gxh.faceattach.base.MyApp;
+import cn.gxh.faceattach.bean.BaseBean;
 import cn.gxh.faceattach.bean.MobileAddSend;
-import cn.gxh.faceattach.bean.MobileLoginSend;
 import cn.gxh.faceattach.http.HttpUrl;
 import cn.gxh.faceattach.http.HttpUtil;
 import cn.gxh.faceattach.interfaces.NetworkRequestListener;
@@ -33,14 +34,16 @@ import cn.gxh.faceattach.util.Logger;
  */
 public class AddPersonTabFragment extends BaseFragment {
 
-    @Bind(R.id.btn_fragment_tab_add_person_picker)
-    Button btnPicker;
+    @Bind(R.id.tv_fragment_tab_add_person_picker)
+    TextView btnPicker;
     @Bind(R.id.iv_fragment_tab_add_person_pic)
     ImageView ivPic;
-    @Bind(R.id.btn_fragment_tab_add_person_confirm)
-    Button btnConfirm;
+    @Bind(R.id.tv_fragment_tab_add_person_confirm)
+    TextView btnConfirm;
     @Bind(R.id.et_fragment_tab_add_person_name)
     EditText etName;
+    @Bind(R.id.et_fragment_tab_add_person_phone)
+    EditText etPhone;
     private Bitmap bitmap;
 
     public static AddPersonTabFragment newInstance() {
@@ -141,15 +144,21 @@ public class AddPersonTabFragment extends BaseFragment {
             return;
         }
 
+        String phone = etPhone.getText().toString().trim();
+        if(TextUtils.isEmpty(phone) || !RegexUtils.isMobileExact(phone)){
+            Global.showToast("请输入正确的手机号");
+            return;
+        }
+
         if(bitmap==null){
             Global.showToast("请选择照片");
             return;
         }
 
         MobileAddSend mobileAddSend=new MobileAddSend();
-        mobileAddSend.setPhoneNum("13521870263");
+        mobileAddSend.setPhoneNum(phone);
         mobileAddSend.setNickName(name);
-        mobileAddSend.setId("bb808064-fad1-4abe-ba8b-4eb6a05c533b");
+        mobileAddSend.setId(MyApp.loginInfo.getId());
         mobileAddSend.setHeadUrlBase64(ImageUtil.bitmapoTBase64(bitmap));
 
         String json = Global.getGson().toJson(mobileAddSend);
@@ -163,6 +172,13 @@ public class AddPersonTabFragment extends BaseFragment {
                     @Override
                     public void onSuccess(String response) {
                         Logger.d("gxh",response);
+                        BaseBean baseBean = Global.getGson().fromJson(response, BaseBean.class);
+                        if(baseBean.getState()==1){
+                            Global.showToast("添加成功");
+                            clearInfo();
+                        }else {
+                            Global.showToast(baseBean.getMessage());
+                        }
                     }
 
                     @Override
@@ -170,6 +186,32 @@ public class AddPersonTabFragment extends BaseFragment {
 
                     }
                 });
+    }
+
+    private void clearInfo() {
+        etName.getText().clear();
+        etPhone.getText().clear();
+
+        recycleBitmap(ivPic);
+        if(bitmap!=null && !bitmap.isRecycled()){
+            bitmap.recycle();
+            bitmap=null;
+        }
+    }
+
+
+    private void recycleBitmap(ImageView iv) {
+        if (iv != null && iv.getDrawable() != null) {
+            BitmapDrawable bitmapDrawable = (BitmapDrawable) iv.getDrawable();
+            iv.setImageDrawable(null);
+            if (bitmapDrawable != null) {
+                Bitmap bitmap = bitmapDrawable.getBitmap();
+                if (bitmap != null) {
+                    bitmap.recycle();
+                }
+
+            }
+        }
     }
 
 
